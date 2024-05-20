@@ -1,0 +1,17 @@
+{
+    "index": {
+        "title": "Home",
+        "theme": {
+            "breadcrumb": false,
+            "sidebar": false,
+            "toc": true,
+            "pagination": false,
+            "typesetting": "article"
+        }
+    },
+
+    "altair-docs": {
+        "title": "Altair Documentation",
+        "type": "page"
+    }
+}

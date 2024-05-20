@@ -1,0 +1,57 @@
+# bashrc Commands
+
+Author: Falah Naufal Zaki
+
+Tags: Guides and Processes
+
+---
+
+## Robot's bashrc Aliases
+
+alias cm=`cd ~/alfarobi_ws && catkin_make`
+
+alias demo=`roslaunch op3_gui_demo op3_demo.launch`
+
+alias alfarobi_src=`cd ~/alfarobi_ws && subl src`
+
+alias sb=`sudo bash && source ~/alfarobi_ws/devel/setup.bash`
+
+alias gt=`gnome-terminal`
+
+alias vmon=`roslaunch vision_monitor vision_monitor.launch`
+
+alias passerA=`roslaunch alfarobi passerA.launch`
+
+alias dist=`rostopic echo /v9_localization_node/projected_ball`
+
+alias only_package=`catkin_make --only-pkg-with-deps`
+
+alias only_fans=`catkin_make --only-pkg-with-deps`
+
+alias bridge=`roslaunch rosbridge_server rosbridge_websocket.launch`
+
+alias webgui=`cd Desktop/alfarobi-motion-gui-main && python3 -m http.server --bind 127.0.0.1`
+
+alias cmloc=`catkin_make --only-pkg-with-deps v9_localization`
+
+alias cat2=`roslaunch v11_cat2_detector v11_cat2_detector.launch`
+
+alias arduino=`roslaunch arduino_controller arduino_controller.launch`
+
+alias main_service=`cd ~/alfarobi_ws/src/ALFAROBI-Service/main_service/scripts && python main_service.py main_service.py`
+
+alias backup_warna=`mkdir ~/tuningan_warna/$(date +%Y%m%d_%H%M) && sudo cp ~/alfarobi_ws/src/ALFAROBI-Vision/v9_ball_detector/config/tabel_warna.xml ~/tuningan_warna/$(date +%Y%m%d_%H%M)`
+
+alias turu=`sudo poweroff`
+
+alias cmball=`cd ~/alfarobi_ws && catkin_make --only-pkg-with-deps v9_ball_detector`
+
+alias guidemo=`roslaunch op3_gui_demo op3_demo.launch`
+
+alias passer_info=`rosrun alfarobi passer_info_node`
+
+alias tuner=`roslaunch op3_offset_tuner_client op3_offset_tuner.launch`
+
+alias gab=`rosrun alfarobi controller_node`
+
+alias cs=`rostopic echo /alfarobi/controller_state`
