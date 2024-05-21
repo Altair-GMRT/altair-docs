@@ -1,13 +1,18 @@
 export default {
-    docsRepositoryBase: "https://github.com/runs664/personal-blog/tree/main",
+    useNextSeoProps() {
+        return {
+          titleTemplate: '%s - Altair'
+        }
+    },
+    docsRepositoryBase: "https://github.com/Altair-GMRT/altair-docs/tree/main",
     logo: <span>Altair GMRT</span>,
     project: {
-        link: 'https://github.com/runs664/personal-blog'
+        link: 'https://github.com/Altair-GMRT/altair-docs'
     },
     footer: {
         text: (
             <span>
-              Made with <span style={{ color: 'red' }}>❤</span> by motion team
+              Made with <span style={{ color: 'red' }}>❤</span> by Altair Team
             </span>
           )
     },

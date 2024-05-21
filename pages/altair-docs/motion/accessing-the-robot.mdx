@@ -1,0 +1,35 @@
+import { Callout } from 'nextra/components'
+import Image from 'next/image'
+
+## Accessing the Robot
+
+Author: Harun
+
+---
+
+### SSH & Servo Checking
+
+```bash
+sudo ssh alfarobi@10.42.0.23 -X #password = ;
+sudo bash
+dxl_check
+scan
+```
+
+### Launch GUI-Demo (access the individual parameters of the robot)
+
+```bash
+demo
+```
+
+### Launch GUI-Tuner (access initial position of the robot)
+
+```bash
+tuner
+```
+
+### Access the NUC storage
+
+```bash
+sftp://alfarobi@10.42.0.23/
+```
