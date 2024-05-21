@@ -5,5 +5,17 @@
 
     "motion" : {
         "title" : "Motion"
+    },
+
+    "vision" : {
+        "title" : "Vision"
+    },
+
+    "electronics" : {
+        "title" : "Electronics"
+    },
+
+    "mechanics" : {
+        "title" : "Mechanics"
     }
 }

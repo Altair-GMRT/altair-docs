@@ -1,3 +1,5 @@
+import { Callout } from 'nextra/components'
+
 # Altair Documentation
 
 ## How to Contribute?
@@ -41,4 +43,225 @@ You can check the version of nvm installed on your machine using the following c
 
 ```bash
 nvm --version
+```
+
+## Styling
+
+### Syntax Highlighting
+
+Nextra uses [Shiki](https://shiki.matsu.io) to do syntax highlighting at build
+time. It's very reliable and performant. For example, adding this in your
+Markdown file:
+
+````md filename="Markdown"
+```js
+console.log('hello, world')
+```
+````
+
+Results in:
+
+```js
+console.log('hello, world')
+```
+
+#### Inlined Code
+
+Inlined syntax highlighting like `let x = 1{:jsx}` is also supported via the
+`{:}` syntax:
+
+```md filename="Markdown"
+Inlined syntax highlighting is also supported `let x = 1{:jsx}` via:
+```
+
+#### Highlighting Lines
+
+You can highlight specific lines of code by adding a `{}` attribute to the code
+block:
+
+````md filename="Markdown"
+```js {1,4-5}
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+````
+
+Result:
+
+```js {1,4-5}
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+#### Highlighting Substrings
+
+You can highlight specific substrings of code by adding a `//` attribute to the
+code block:
+
+````md filename="Markdown"
+```js /useState/
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+````
+
+```js /useState/
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+You can highlight only a part of the occurrences of that substring by adding a
+number it: `/str/1`, or multiple: `/str/1-3`, `/str/1,3`.
+
+#### Copy Button
+
+By adding a `copy` attribute, a copy button will be added to the code block when
+the user hovers over it:
+
+````md filename="Markdown"
+```js copy
+console.log('hello, world')
+```
+````
+
+Renders:
+
+```js copy
+console.log('hello, world')
+```
+
+You can enable this feature globally by setting `defaultShowCopyCode: true` in
+your Nextra configuration (`next.config.js` file). Once it's enabled globally,
+you can disable it via the `copy=false` attribute.
+
+#### Line Numbers
+
+You can add line numbers to your code blocks by adding a `showLineNumbers`
+attribute:
+
+````md filename="Markdown"
+```js showLineNumbers
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+````
+
+Renders:
+
+```js showLineNumbers
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+#### Filenames and Titles
+
+You can add a filename or a title to your code blocks by adding a `filename`
+attribute:
+
+````md filename="Markdown"
+```js filename="example.js"
+console.log('hello, world')
+```
+````
+
+Renders:
+
+```js filename="example.js"
+console.log('hello, world')
+```
+
+#### ANSI Highlighting
+
+You can highlight ANSI escape codes:
+
+````md filename="Markdown"
+```ansi
+[0m [0;32m✓[0m [0;2msrc/[0mindex[0;2m.test.ts (1)[0m
+  [0;2m Test Files [0m [0;1;32m1 passed[0;98m (1)[0m
+  [0;2m      Tests [0m [0;1;32m1 passed[0;98m (1)[0m
+  [0;2m   Start at [0m 23:32:41
+  [0;2m   Duration [0m 11ms
+  [42;1;39;0m PASS [0;32m Waiting for file changes...[0m
+         [0;2mpress [0;1mh[0;2m to show help, press [0;1mq[0;2m to quit
+```
+````
+
+Renders:
+
+```ansi
+[0m [0;32m✓[0m [0;2msrc/[0mindex[0;2m.test.ts (1)[0m
+  [0;2m Test Files [0m [0;1;32m1 passed[0;98m (1)[0m
+  [0;2m      Tests [0m [0;1;32m1 passed[0;98m (1)[0m
+  [0;2m   Start at [0m 23:32:41
+  [0;2m   Duration [0m 11ms
+  [42;1;39;0m PASS [0;32m Waiting for file changes...[0m
+         [0;2mpress [0;1mh[0;2m to show help, press [0;1mq[0;2m to quit
+```
+
+#### Supported Languages
+
+Check [this list](https://github.com/shikijs/shiki/blob/main/docs/languages.md)
+for all supported languages.
+
+### Callouts
+
+To add callouts in the documentation, you can use the following syntax:
+
+```js filename="docs.mdx"
+<Callout type='warning'>
+This is a warning callout.
+</Callout>
+```
+
+This will render as:
+
+<Callout type='warning'>
+This is a warning callout.
+</Callout>
+
+but, you need to import the `Callout` component from `nextra/components` and use it in the markdown file.
+
+```js filename="docs.mdx"
+import { Callout } from 'nextra/components'
+```
+
+The available callout types are `info`, `warning`, `error`, and `success`.
+
+### Images
+
+To add images in the documentation, you can use the following syntax:
+
+```js filename="docs.mdx"
+import Image from 'next/image'
+
+<Image
+  src='/path/to/image.png'
+  alt='Image Description'
+  width={500}
+  height={500}
+/>
 ```

@@ -3,7 +3,7 @@
         "title": "Home",
         "theme": {
             "breadcrumb": false,
-            "sidebar": false,
+            "sidebar": true,
             "toc": true,
             "pagination": false,
             "typesetting": "article"
